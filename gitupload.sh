@@ -3,4 +3,4 @@
 git add .
 git commit -m "localUpload"
 #git push origin master
-git push origin test
+git push -u origin test
