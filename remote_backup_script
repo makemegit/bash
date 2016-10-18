@@ -1,0 +1,16 @@
+#!/bin/bash
+# RemoteBackupScript
+#------------------------------------------------------------------
+#Config
+FILES_TO_BACKUP=
+DATABASE_TO_BACKUP=
+FILENAMES_WITH_DATE=
+REMOTE_SERVER=
+#------------------------------------------------------------------
+# Files Backup
+rsync
+# Myslq Backup
+mysqldump
+#------------------------------------------------------------------
+# Cleaning backups older THAN x(days)
+
