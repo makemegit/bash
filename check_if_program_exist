@@ -1,0 +1,8 @@
+#!/bin/bash
+#figlet1() {
+    if hash figlet 2>/dev/null; then
+        figlet MakeMe
+    else
+        echo "No figlet"
+    fi
+#}

@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "Select: List or Remove the \"error_log\" files recursively!!! (CRT+C to break)"
+select yn in "List" "Remove"; do
+    case $yn in
+        List ) find . -type f -name "*error_log" -print0 | xargs -0 du -hcs; echo "Select 1 to List or 2 to Remove the "error_log" files recursively!!!";;
+        Remove ) find . -type f -name "*error_log" -exec rm -vf {} \; && break;;
+    esac
+done

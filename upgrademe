@@ -1,0 +1,28 @@
+#!/bin/bash
+# Check if figlet exist
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+if hash figlet 2>/dev/null; then
+	figlet ShadowOne 
+	figlet Updates
+else
+	echo "Shadowone Updates"
+fi
+datevar=$(date +"%Y-%m-%d")
+# Notify
+notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "Моля въведете парола за да започне актуализирането!" 
+# Update
+sudo apt-get update -y 
+echo -e "Ъпдейта на хранилищата приключи!\n\n$GREENЗапочва обновяване:$NC" 
+sudo apt-get upgrade -y
+sudo apt-get dist-upgrade -y 
+# Cleaning
+echo -e "$REDЗапочва почистване на ненужни пакети:$NC" 
+sudo apt-get autoremove  
+echo "Системата ви е обновена!" 
+# Log
+logvar=$(grep -A10 $datevar /var/log/apt/history.log | grep -A8 Upgrade)
+notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)"  "Системата ви е обновена!" && notify-send "Лог:" "$logvar"
+
