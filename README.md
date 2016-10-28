@@ -1,5 +1,4 @@
-# bash
-learning bash scripting
+# my "Hello World" bash scripts 
 
 gitupload.sh  # PushingAll to Github
 
