@@ -1,0 +1,37 @@
+#!/bin/bash
+#
+#
+# Website Backup Script v1
+
+# Variables
+# --------------------------------------------------
+
+WEBSITE_PATH=/var/www # Make sure you dont have "/" at the end of the path
+PATH_BACKUP=/backups/webtracker_backup # Make sure you dont have "/" at the end of the path
+KEEP_BACKUP_TIME=6  #Number of days to keep backups (vaue 0 is 1 day)
+WEBSITE_DB=website
+
+#Do NOT change this!!!
+DATE_TIME=$(date +"%Y_%m_%d_%Hh")
+PATH_WITH_DATE=$PATH_BACKUP"/"$DATE_TIME
+SQLNAME="website_"$DATE_TIME".sql"
+
+# --------------------------------------------------
+#
+echo "Backup started at $(date) with load: $(uptime | awk '{print $10 $11 $12}')" >> /var/log/backup_website.log
+
+#Files Backup
+rsync -avW --exclude-from=/backups/exclude.txt $WEBSITE_PATH/ $PATH_WITH_DATE/
+
+#Mysql Backup
+mysqldump $WEBSITE_DB > $PATH_WITH_DATE/$SQLNAME
+
+#Cleaning
+find $PATH_BACKUP/ -maxdepth 1 -type d -ctime +$KEEP_BACKUP_TIME -exec rm -rf {} \;
+
+#Sync with the backup server
+rsync -avW --delete $PATH_BACKUP/ -e 'ssh -p 22' websitebackup@remote.server.com:/storage/websitebackup/backups/
+
+#End
+echo "Backup ended at $(date) with load: $(uptime | awk '{print $10 $11 $12}')" >> /var/log/backup_website.log
+
