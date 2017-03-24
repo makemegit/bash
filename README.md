@@ -12,7 +12,7 @@ check_if_program_exist # Checking for existing aplication
 
 error_log_search_and_destroy # Search or delete error logs
 
-lspermissions # List like "ls -l" but with numeric permissions. 777 755 644 etc..
+lspermissions # List like "ls -lah" but with numeric permissions. 777 755 644 etc..
 
 sortme # Compare two lists and output any lines that are the same
 
