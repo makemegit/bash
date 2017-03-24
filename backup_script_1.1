@@ -1,0 +1,40 @@
+#!/bin/bash
+#
+#
+#Custom Backup Script v.1.1
+#This is a simple script to backup your site to remote server.
+
+#Variables
+#--------------------------------------------------
+
+PATH_WWW=/var/www/html   #Path to files
+PATH_BACKUP=/backups/custom_backup   #Path to local backups
+KEEP_BACKUP_TIME=1  #Number of days to keep backups (vaue 0 is 1 day)
+DB=db   #Database name
+DB_USER=user   #Database user
+DB_PASS='pass'   #Password for the user
+
+#Do NOT change this!!!
+DATE_TIME=$(date +"%Y_%m_%d_%Hh")
+PATH_WITH_DATE=$PATH_BACKUP"/"$DATE_TIME
+SQLNAME=""$DB"_"$DATE_TIME".sql"
+
+#--------------------------------------------------
+#
+echo "Backup started at $(date) with load: $(uptime | awk '{print $10 $11 $12}')" >> /var/log/backup_finish_time.log
+
+#Files Backup
+rsync -aW --exclude-from=/backups/exclude.txt $PATH_WWW $PATH_WITH_DATE
+
+#Mysql Backup
+mysqldump -u $DB_USER -p$DB_PASS $DB > $PATH_WITH_DATE/$SQLNAME
+
+#Cleaning
+find $PATH_BACKUP/ -maxdepth 1 -type d -ctime +$KEEP_BACKUP_TIME -exec rm -rf {} \;
+
+#Sync with the backup server
+rsync -aW --delete $PATH_BACKUP"/" -e 'ssh -p 22' backupuser@remote.server:/storage/backupuser/backups/
+
+#End
+echo "Backup ended at $(date) with load: $(uptime | awk '{print $10 $11 $12}')" >> /var/log/backup_finish_time.log
+
