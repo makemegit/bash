@@ -19,3 +19,5 @@ sortme # Compare two lists and output any lines that are the same
 upgrademe # My update script fo Ubuntu
 
 viewallcron # Lists all of the users cron jobs
+
+whatismyip # Outputs your local and external IP
