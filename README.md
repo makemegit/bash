@@ -4,6 +4,8 @@ gitupload.sh  # PushingAll to Github
 
 backup_script # Backup your site to local and remote destination (working)
 
+backup_script_1.1 # This version supports specific mysql user and database 
+
 exclude.txt  # Exclude list for backup_script
 
 check_if_program_exist # Checking for existing aplication
