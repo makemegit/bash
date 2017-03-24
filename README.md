@@ -16,7 +16,7 @@ lspermissions # List like "ls -lah" but with numeric permissions. 777 755 644 et
 
 sortme # Compare two lists and output any lines that are the same
 
-upgrademe # My update script fo Ubuntu
+upgrademe # My update script for Ubuntu
 
 viewallcron # Lists all of the users cron jobs
 
