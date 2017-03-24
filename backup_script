@@ -7,7 +7,7 @@
 # --------------------------------------------------
 
 WEBSITE_PATH=/var/www # Make sure you dont have "/" at the end of the path
-PATH_BACKUP=/backups/webtracker_backup # Make sure you dont have "/" at the end of the path
+PATH_BACKUP=/backups/custom_backups # Make sure you dont have "/" at the end of the path
 KEEP_BACKUP_TIME=6  #Number of days to keep backups (vaue 0 is 1 day)
 WEBSITE_DB=website
 
