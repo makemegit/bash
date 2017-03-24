@@ -5,10 +5,10 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 if hash figlet 2>/dev/null; then
-	figlet ShadowOne 
+	figlet MakeMe 
 	figlet Updates
 else
-	echo "Shadowone Updates"
+	echo "MakeMe Updates"
 fi
 datevar=$(date +"%Y-%m-%d")
 # Notify
