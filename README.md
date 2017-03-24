@@ -10,7 +10,7 @@ exclude.txt  # Exclude list for backup_script
 
 check_if_program_exist # Checking for existing aplication
 
-error_log_search_and_distroy # Search or delete error logs
+error_log_search_and_destroy # Search or delete error logs
 
 lspermissions # List like "ls -l" but with numeric permissions. 777 755 644 etc..
 
