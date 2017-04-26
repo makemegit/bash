@@ -21,3 +21,5 @@ upgrademe # My update script for Ubuntu
 viewallcron # Lists all of the users cron jobs
 
 whatismyip # Outputs your local and external IP
+
+ip_allow_on_the_system.sh # cpanel + ssh + csf Allow IP
