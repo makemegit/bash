@@ -10,6 +10,5 @@ export DATA="whostmgrd : $IP : allow\\
 whostmgrd : ALL : deny\\
 sshd : $IP : allow\\
 # $NAME"
-sed -i "s/whostmgrd : ALL : deny/${DATA}/g" hosts.allow
-echo "$IP # $NAME" >> csf.allow
-
+sed -i "s/whostmgrd : ALL : deny/${DATA}/g" /etc/hosts.allow
+echo "$IP # $NAME" >> /etc/csf/csf.allow
