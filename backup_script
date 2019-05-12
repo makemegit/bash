@@ -11,7 +11,7 @@ PATH_BACKUP=/backups/custom_backups # Make sure you dont have "/" at the end of 
 KEEP_BACKUP_TIME=6  # Number of days to keep backups (vaue 0 is 1 day)
 WEBSITE_DB=website
 
-#Do NOT change this!!!
+# Do NOT change this!!!
 DATE_TIME=$(date +"%Y_%m_%d_%Hh")
 PATH_WITH_DATE=$PATH_BACKUP"/"$DATE_TIME
 SQLNAME="website_"$DATE_TIME".sql"
