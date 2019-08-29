@@ -7,4 +7,3 @@ do
   echo "Paste some input, then press ${red}Control-D${reset}:"
   cat > /tmp/sortme ; diff <(sort /tmp/sortme) <(sort -u /tmp/sortme)
 done
-
