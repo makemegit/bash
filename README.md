@@ -1,10 +1,10 @@
-# my "Hello World" bash scripts 
+# My "Hello World" bash scripts 
 
 gitupload.sh  # PushingAll to Github
 
 backup_script # Backup your site to local and remote destination (working)
 
-backup_script_1.1 # This version supports specific mysql user and database 
+backup_script_1.1 # This version supports specific mysql user and database
 
 exclude.txt  # Exclude list for backup_script
 
