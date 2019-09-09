@@ -1,0 +1,18 @@
+#!/bin/bash
+echo "# Accelerate transfer"
+sysctl net.ipv4.tcp_window_scaling
+sysctl net.core.rmem_max
+sysctl net.core.wmem_max
+sysctl net.ipv4.tcp_rmem
+sysctl net.ipv4.tcp_wmem
+sysctl net.ipv4.tcp_slow_start_after_idle
+echo "# vm.swappiness=10"
+echo "# switch off IPv6"
+sysctl net.ipv6.conf.default.disable_ipv6
+sysctl net.ipv6.conf.all.disable_ipv6
+sysctl net.ipv6.conf.lo.disable_ipv6
+echo "# --99--"
+sysctl vm.swappiness
+sysctl vm.vfs_cache_pressure
+sysctl vm.dirty_background_bytes
+sysctl vm.dirty_bytes
