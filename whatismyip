@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "Local IP:"
-ip route get 8.8.8.8 | awk '{print $NF; exit}'
+#ip route get 8.8.8.8 | awk '{print $7; exit}'
+ip route get 8.8.8.8 | sed -n -e 's/^.*src //p' | awk '{print $1}'
 echo -e "\nPublic IP:"
 wget -qO- http://ipecho.net/plain ; echo
