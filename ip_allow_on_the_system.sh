@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Please fill the IP and NAME fields:"
-read -e - p "IP : " IP
+read -e -p "IP : " IP
 echo "NAME"
 read -e -p "NAME : " NAME
 #----------------------------------------
