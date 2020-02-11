@@ -1,9 +1,8 @@
 #!/bin/bash
 echo "Please fill the IP and NAME fields:"
-echo "IP:"
-read -e - p IP
+read -e - p "IP : " IP
 echo "NAME"
-read NAME
+read -e -p "NAME : " NAME
 #----------------------------------------
 export DATA="whostmgrd : $IP : allow\\
 # $NAME\\
