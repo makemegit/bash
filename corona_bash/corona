@@ -1,0 +1,22 @@
+#!/bin/bash
+# ===colors===
+NC='\033[0m'       # Text Reset (No Color)
+Red='\033[0;31m'          # Red
+Green='\033[0;32m'        # Green
+BWhite='\033[1;37m'       # White
+#
+echo "Coronavirus COVID-19 Live Statistics for bash"
+echo
+# Get Data
+TOTALDATA=$(lynx -dump https://www.worldometers.info/coronavirus/  | grep "Total:" | head -n1)
+# Total
+TOTALTOTAL=$(echo $TOTALDATA | awk '{print $2}')
+echo -e "Confirmed: "$BWhite$TOTALTOTAL$NC
+# Deaths
+DEATHTOTAL=$(echo $TOTALDATA | awk '{print $4}')
+asd=$(echo $DEATHTOTAL/$TOTALTOTAL*100 | sed 's/,//g' | bc -l)
+asd2=$(LC_NUMERIC="en_US.UTF-8" printf "%.2f\n" $asd)
+echo -e "Deaths: " $Red$DEATHTOTAL $NC$asd2%
+# Recovered
+RECOVEREDTOTAL=$(echo $TOTALDATA | awk '{print $6}')
+echo -e "Recovered: "$Green$RECOVEREDTOTAL$NC
