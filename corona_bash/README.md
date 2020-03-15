@@ -1,8 +1,8 @@
-Coronavirus COVID-19 Live Statistics for bash
+Simple bash script for checking coronavirus statistics from terminal
 
-You need: lynx
+You will need: lynx
 
-Install:
+Download:
 ```bash
 wget https://raw.githubusercontent.com/makemegit/bash/master/corona_bash/corona
 chmod +x corona
