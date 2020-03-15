@@ -17,4 +17,4 @@ Coronavirus COVID-19 Live Statistics for bash
 italy
 Confirmed: 21,157
 Deaths:  1,966 9.29%
-Recovered: 1,518
+Recovered: 1,518`
