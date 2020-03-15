@@ -3,11 +3,11 @@ Coronavirus COVID-19 Live Statistics for bash
 You need: lynx
 
 Use:
-
+```bash
 wget https://raw.githubusercontent.com/makemegit/bash/master/corona_bash/corona
 chmod +x corona
 ./corona
-
+```
 *you can enter country
 
 ```bash
