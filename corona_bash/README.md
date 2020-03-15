@@ -9,8 +9,8 @@ chmod +x corona
 ./corona
 ```
 Use:
-```bash
-$ corona 
+```
+$ ./corona 
 Coronavirus COVID-19 Live Statistics for bash
 
 2020-03-15 10:05:15
@@ -21,7 +21,7 @@ Recovered: 75,939
 ```
 Or enter country
 
-```bash
+```
 $ ./corona italy
 Coronavirus COVID-19 Live Statistics for bash
 
