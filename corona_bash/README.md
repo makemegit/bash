@@ -19,7 +19,7 @@ Confirmed: 157,120
 Deaths:  5,839 3.72%
 Recovered: 75,939
 ```
-Or enter country
+Or enter a country:
 
 ```
 $ ./corona italy
