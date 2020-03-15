@@ -2,13 +2,21 @@
 # ===colors===
 NC='\033[0m'       # Text Reset (No Color)
 Red='\033[0;31m'          # Red
+Blue='\033[0;34m'         # Blue
 Green='\033[0;32m'        # Green
 BWhite='\033[1;37m'       # White
 #
+COUNTRY="$@"
+if [[ "$COUNTRY" = "" ]]
+	then
+		COUNTRY="Total:"
+  else
+    COUNTRY="$@"
+fi
 echo "Coronavirus COVID-19 Live Statistics for bash"
-echo
+echo -e $Blue$COUNTRY$NC
 # Get Data
-TOTALDATA=$(lynx -dump https://www.worldometers.info/coronavirus/  | grep "Total:" | head -n1)
+TOTALDATA=$(lynx -dump https://www.worldometers.info/coronavirus/  | grep -i "$COUNTRY" | head -n1)
 # Total
 TOTALTOTAL=$(echo $TOTALDATA | awk '{print $2}')
 echo -e "Confirmed: "$BWhite$TOTALTOTAL$NC
