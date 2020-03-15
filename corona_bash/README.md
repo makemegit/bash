@@ -10,11 +10,11 @@ chmod +x corona
 
 *you can enter country
 
-`$ ./corona italy
+$ ./corona italy
 Coronavirus COVID-19 Live Statistics for bash
 
 2020-03-15 09:51:38
 italy
 Confirmed: 21,157
 Deaths:  1,966 9.29%
-Recovered: 1,518`
+Recovered: 1,518
