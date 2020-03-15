@@ -7,13 +7,17 @@ Green='\033[0;32m'        # Green
 BWhite='\033[1;37m'       # White
 #
 COUNTRY="$@"
+DATENOW=$(date +%F" "%H:%M:%S)
 if [[ "$COUNTRY" = "" ]]
 	then
 		COUNTRY="Total:"
   else
     COUNTRY="$@"
 fi
+
 echo "Coronavirus COVID-19 Live Statistics for bash"
+echo
+echo -e $DATENOW
 echo -e $Blue$COUNTRY$NC
 # Get Data
 TOTALDATA=$(lynx -dump https://www.worldometers.info/coronavirus/  | grep -i "$COUNTRY" | head -n1)
