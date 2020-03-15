@@ -10,7 +10,7 @@ chmod +x corona
 
 *you can enter country
 
-$ ./corona italy
+`$ ./corona italy
 Coronavirus COVID-19 Live Statistics for bash
 
 2020-03-15 09:51:38
