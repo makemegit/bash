@@ -20,7 +20,7 @@ echo
 echo -e $DATENOW
 echo -e $Blue$COUNTRY$NC
 # Get Data
-TOTALDATA=$(lynx -dump https://www.worldometers.info/coronavirus/  | grep -vi "read\|new" | grep -i "$COUNTRY" | head -n1)
+TOTALDATA=$(lynx -dump https://www.worldometers.info/coronavirus/  | grep -vi "read\|new\|from\|changes" | grep -i "$COUNTRY" | head -n1)
 # Total
 TOTALTOTAL=$(echo $TOTALDATA | awk '{print $2}')
 echo -e "Confirmed: "$BWhite$TOTALTOTAL$NC
