@@ -1,3 +1,5 @@
+*NOT WORKING*
+
 Simple bash script for checking coronavirus statistics from terminal
 
 You will need: lynx
